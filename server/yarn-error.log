@@ -1,0 +1,53 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add passport passport-google-oauth20
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Users\congs\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin;C:\Users\congs\AppData\Roaming\npm;C:\Users\congs\AppData\Local\Yarn\bin;C:\Program Files\Heroku\bin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  8.9.4
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "engines": {
+      "node": "8.1.1",
+      "npm": "5.0.3"
+    },
+    "scripts": {
+      "start": "node index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.16.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Found incompatible module
+      at new MessageError (C:\Program Files (x86)\Yarn\lib\cli.js:186:110)
+      at Object.checkOne (C:\Program Files (x86)\Yarn\lib\cli.js:62444:11)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:22773:75
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:98:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:116:14
+      at new Promise (<anonymous>)
+      at new F (C:\Program Files (x86)\Yarn\lib\cli.js:23451:28)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:95:12
+      at C:\Program Files (x86)\Yarn\lib\cli.js:22777:27
