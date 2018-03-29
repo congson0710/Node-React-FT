@@ -1,10 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const key = require('./config/key');
+const app = express();
 
 require('./services/passport');
-
-const app = express();
+require('./models/Users');
 
 require('./routes/authRoutes')(app);
 
