@@ -7,8 +7,7 @@ const key = require('./config/key');
 require('./models/Users');
 require('./services/passport');
 
-require('./routes/authRoutes')(app);
-
+mongoose.connect(key.myMongoDB);
 const app = express();
 
 app.use(
@@ -21,7 +20,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(key.myMongoDB);
+require('./routes/authRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
