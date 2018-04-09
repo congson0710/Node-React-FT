@@ -1,6 +1,7 @@
 const initialState = {};
 
 const authReducer = (state = initialState, action) => {
+  console.log(action);
   switch (action.type) {
     // case value:
 
@@ -10,3 +11,5 @@ const authReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default authReducer;
