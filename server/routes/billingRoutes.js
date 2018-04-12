@@ -1,6 +1,6 @@
 const keys = require('../config/key');
 const stripe = require('stripe')(keys.stripeSecretKey);
-stripe.setPublishableKey('pk_test_jXWWPew6bntu1QJogejx9MZk');
+stripe.setPublishableKey(keys.stripePublishKey);
 const requireLogin = require('../middlewares/requireLogin');
 
 module.exports = app => {
