@@ -1,5 +1,5 @@
 const keys = require('../config/key');
-const stripe = require('stripe')(keys.stripeSecretKey);
+const stripe = require('stripe')(keys.stripePublishKey);
 // stripe.setPublishableKey(keys.stripePublishKey);
 const requireLogin = require('../middlewares/requireLogin');
 
