@@ -31,11 +31,14 @@ class Header extends React.Component {
   render() {
     return (
       <nav>
-        <div class="nav-wrapper">
-          <Link to={this.props.auth ? '/surveys' : '/'} class="left brand-logo">
+        <div className="nav-wrapper">
+          <Link
+            to={this.props.auth ? '/surveys' : '/'}
+            className="left brand-logo"
+          >
             eMailee
           </Link>
-          <ul class="right">{this.renderContent()}</ul>
+          <ul className="right">{this.renderContent()}</ul>
         </div>
       </nav>
     );
