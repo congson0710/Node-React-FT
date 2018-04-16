@@ -13,7 +13,11 @@ class SurveyNew extends React.Component {
 
   renderContent() {
     if (this.state.showFormPreview) {
-      return <SurveyFormPreview />;
+      return (
+        <SurveyFormPreview
+          onCancel={() => this.setState({ showFormPreview: false })}
+        />
+      );
     }
     return (
       <SurveyForm

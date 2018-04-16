@@ -4,21 +4,7 @@ import { Link } from 'react-router-dom';
 import { reduxForm, Field } from 'redux-form';
 import SurveyField from './SurveyFields';
 import validateEmails from '../../ultis/validateEmail';
-
-const FIELD = [
-  { label: 'Survey Title', name: 'title', errorMessage: 'Can not be empty' },
-  {
-    label: 'Survey Subject',
-    name: 'subject',
-    errorMessage: 'Can not be empty',
-  },
-  { label: 'Survey Email', name: 'email', errorMessage: 'Can not be empty' },
-  {
-    label: 'Survey Recipient list',
-    name: 'recipients',
-    errorMessage: 'Can not be empty',
-  },
-];
+import FIELD from './formField';
 
 class SurveyForm extends React.Component {
   renderFields() {
@@ -69,4 +55,5 @@ const validate = values => {
 export default reduxForm({
   validate,
   form: 'surveyForm',
+  destroyOnUnmount: false,
 })(SurveyForm);
