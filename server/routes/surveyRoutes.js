@@ -13,7 +13,7 @@ module.exports = app => {
   app.post('/api/surveys/webhooks', (req, res) => {
     const p = new Path('/api/survey/:surveyId/:choice');
 
-    const events = _.chain(req.body)
+    _.chain(req.body)
       .map(({ email, url }) => {
         const match = p.test(new URL(url).pathname);
         if (match) {
@@ -26,9 +26,20 @@ module.exports = app => {
       })
       .compact()
       .uniqBy('email', 'surveyId')
+      .each(event => {
+        Survey.updateOne(
+          {
+            _id: surveyId,
+            $elemMatch: { email: email, responded: false },
+          },
+          {
+            $inc: { [choice]: 1 },
+            $set: { 'recipients.$.responded': true },
+          }
+        ).exec();
+      })
       .value();
 
-    console.log(events);
     res.send({});
   });
 
