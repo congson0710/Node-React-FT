@@ -26,15 +26,15 @@ module.exports = app => {
       })
       .compact()
       .uniqBy('email', 'surveyId')
-      .each(event => {
+      .each(({ surveyId, email, choice }) => {
         Survey.updateOne(
           {
             _id: surveyId,
-            $elemMatch: { email: email, responded: false },
+            $elemMatch: { email: email, response: false },
           },
           {
             $inc: { [choice]: 1 },
-            $set: { 'recipients.$.responded': true },
+            $set: { 'recipients.$.response': true },
           }
         ).exec();
       })
